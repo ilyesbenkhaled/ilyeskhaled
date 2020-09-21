@@ -128,7 +128,7 @@ $('#sendmessage').click(function(e) {
   $('.load').fadeIn();
   $.ajax({
       type: 'POST',
-      url: "https://www.adhamz.me/mail.php",
+      url: "https://https://ilyesbenkhaled.github.io/ilyeskhaled//mail.php",
       data: {
           name: name,
           email: email,
