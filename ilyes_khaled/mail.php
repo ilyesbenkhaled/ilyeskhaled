@@ -1,23 +1,19 @@
-<?php
-$destinataire = 'ilyeskhaled@hotmail.fr';
-// Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
-$expediteur = 'test@test';
-$copie = 'ilyeskhaled@hotmail.fr';
-$copie_cachee = 'ilyeskhaled@hotmail.fr;
-$objet = 'Test'; // Objet du message
-$headers  = 'MIME-Version: 1.0' . "\n"; // Version MIME
-$headers .= 'Reply-To: '.$expediteur."\n"; // Mail de reponse
-$headers .= 'From: "Nom_de_expediteur"<'.$expediteur.'>'."\n"; // Expediteur
-$headers .= 'Delivered-to: '.$destinataire."\n"; // Destinataire
-$headers .= 'Cc: '.$copie."\n"; // Copie Cc
-$headers .= 'Bcc: '.$copie_cachee."\n\n"; // Copie cachée Bcc        
-$message = 'Un Bonjour de Developpez.com!';
-if (mail($destinataire, $objet, $message, $headers)) // Envoi du message
-{
-    echo 'Votre message a bien été envoyé ';
-}
-else // Non envoyé
-{
-    echo "Votre message n'a pas pu être envoyé";
-}
+<?php 
+if(isset($_POST['submit'])) {
+    $to = "ilyeskhaled@hotmail.fr";
+    $from = $_POST['email']; 
+    $first_name = $_POST['name'];
+    // $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " ". " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }	
 ?>
