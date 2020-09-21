@@ -413,24 +413,24 @@ this experience on my projects so you got final professional result.
       <!-- Start Contact Form -->
       <div class="row">
         <div class="col-md-12">
-          <form class="row contact-form needs-validation" novalidate="" action="mailto:ilyeskhaled@hotmail.fr" enctype="text/plain" name="EmailForm" method="POST">
+          <form class="row contact-form needs-validation" novalidate="" action="https://ilyesbenkhaled.github.io/ilyeskhaled/mail.php" enctype="text/plain" name="EmailForm" method="POST">
             <!-- Name Input -->
             <div class="col-md-12">
-              <input type="text" class="form-control" id="name" placeholder="Full Name" required="">
+              <input type="text" class="form-control" id="name" placeholder="Full Name" required="required">
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <!-- Email Input -->
             <div class="col-md-12">
-              <input type="email" class="form-control" placeholder="Email" id="email" required="">
+              <input type="email" class="form-control" placeholder="Email" id="email" required="required">
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <!-- textarea Input -->
             <div class="col-md-12">
-              <textarea class="form-control" id="message" placeholder="Message" required=""></textarea>
+              <textarea class="form-control" id="message" placeholder="Message" required="required"></textarea>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -438,7 +438,7 @@ this experience on my projects so you got final professional result.
             <!-- Submit Button -->
             <div class="col-12 mt-4 text-center">
             <div class="load" style="display:none"><img src="ilyes_khaled/load.svg"></div>
-              <button class="btn main-button" id="sendmessage">Send Message</button>
+              <button class="btn main-button" id="submit" name="submit">Send Message</button>
 				<div class="alert alert-success" id="done" role="alert" style="display:none">
   Message has been Sent.
 </div>
